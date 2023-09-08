@@ -5,6 +5,8 @@ set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 
 project(Matrix VERSION ${PROJECT_VERSION})
 
+find_package(Boost COMPONENTS unit_test_framework REQUIRED)
+
 configure_file(version.h.in version.h)
 
 add_executable(Matrix_cli main.cpp)
