@@ -371,7 +371,7 @@ public:
     }
 
     void DeleteChildNode(void* node) override {
-        UNUSED(node)
+        UNUSED(node);
     }
 private:
     IndexNodePtr<T, N, Default> mRoot;
