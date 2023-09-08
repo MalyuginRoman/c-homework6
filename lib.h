@@ -370,7 +370,9 @@ public:
         return IndexNodeIterator<T, N, Default>(mRoot, false);
     }
 
-    void DeleteChildNode(void* node) override {}
+    void DeleteChildNode(void* node) override {
+        UNUSED(node)
+    }
 private:
     IndexNodePtr<T, N, Default> mRoot;
 };
