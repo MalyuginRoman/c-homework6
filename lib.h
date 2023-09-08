@@ -371,7 +371,10 @@ public:
     }
 
     void DeleteChildNode(void* node) override {
-        UNUSED(node);
+#ifdef DEBUG_PRINT
+        std::cout << "DeleteChildNode, N==" << N << ", node=" << node << ", this=" << this << std::endl;
+        mRoot = nullptr;
+#endif
     }
 private:
     IndexNodePtr<T, N, Default> mRoot;
