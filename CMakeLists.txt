@@ -7,6 +7,13 @@ project(Matrix VERSION ${PROJECT_VERSION})
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
+set(DEBUG_PRINT "0")
+
+if (DEBUG_PRINT)
+	message("DEBUG_PRINT is activated!")
+	add_definitions(-DDEBUG_PRINT)
+endif()
+
 configure_file(version.h.in version.h)
 
 add_executable(Matrix_cli main.cpp)
