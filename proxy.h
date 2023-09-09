@@ -1,14 +1,10 @@
 #pragma once
-#include <map>
-#include <algorithm>
-#include <tuple>
-#include <memory>
 
 #include "matrix.h"
+#include <memory>
 
 template<class T, T N>
 class Matrix;
-
 
 template<class T, T N>
 class Proxy{
