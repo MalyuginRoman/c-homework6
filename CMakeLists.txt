@@ -5,13 +5,6 @@ set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 
 project(Matrix VERSION ${PROJECT_VERSION})
 
-set(DEBUG_PRINT "0")
-
-if (DEBUG_PRINT)
-	message("DEBUG_PRINT is activated!")
-	add_definitions(-DDEBUG_PRINT)
-endif()
-
 configure_file(version.h.in version.h)
 
 add_executable(Matrix_cli main.cpp)
