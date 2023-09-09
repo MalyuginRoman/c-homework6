@@ -5,8 +5,6 @@ set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 
 project(Matrix VERSION ${PROJECT_VERSION})
 
-find_package(Boost COMPONENTS unit_test_framework REQUIRED)
-
 set(DEBUG_PRINT "0")
 
 if (DEBUG_PRINT)
