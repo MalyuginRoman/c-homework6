@@ -5,7 +5,7 @@
 #include "lib.h"
 
 
-int main(int, char const *) {
+int main(int, char const **) {
 
     Matrix<int, 0> matrix;
 
