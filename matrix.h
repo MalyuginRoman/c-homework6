@@ -4,7 +4,7 @@
 #include <tuple>
 #include <memory>
 
-#include "lib.h"
+#include "proxy.h"
 
 template<class T, T N>
 class Matrix{
