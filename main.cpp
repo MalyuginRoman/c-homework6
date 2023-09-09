@@ -4,6 +4,7 @@
 #include <tuple>
 #include "lib.h"
 
+#include "matrix.h"
 
 int main(int, char const **) {
 
