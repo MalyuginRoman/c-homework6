@@ -24,10 +24,10 @@ target_link_libraries(Matrix_cli PRIVATE
 
 if (MSVC)
     target_compile_options(Matrix_cli PRIVATE
-        /W4
+        /W4  /WX
     )
     target_compile_options(Matrix PRIVATE
-        /W4
+        /W4  /WX
     )
 else ()
     target_compile_options(Matrix_cli PRIVATE
