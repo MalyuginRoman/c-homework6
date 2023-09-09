@@ -1,27 +1,32 @@
 #include <iostream>
-
+#include <string>
+#include <cassert>
+#include <tuple>
 #include "lib.h"
 
-int main(int, char const **) {
-    
-	Matrix<int, 2, 0> matrix;
 
-    for (size_t i = 0; i < 10; ++i) {
+int main(int, char const *) {
+
+    Matrix<int, 0> matrix;
+
+    for (auto i = 0; i < 10; i++) {
         matrix[i][i] = i;
         matrix[i][9 - i] = 9 - i;
     }
-    for (size_t i = 1; i <= 8; ++i) {
-        for (size_t j = 1; j <= 8; ++j) {
-            std::cout << matrix[i][j] << ' ';
+
+    for(auto i = 1; i < 9; i++){
+        for (auto j = 1; j < 9; j++){
+            std::cout<<matrix[i][j]<< ' ';
         }
-        std::cout << std::endl;
-    }
-    std::cout << "Busy cells = " << matrix.size() << std::endl;
-    for (auto occupied : matrix) {
-        for (auto index : occupied.first)
-            std::cout << index << ' ';
-        std::cout << occupied.second << std::endl;
+        std::cout<<std::endl;
     }
 
-    return 0;
+    std::cout << "Busy cells = " << matrix.size() << std::endl;
+
+    for(auto c : matrix){
+        int x,y,v;
+        std::tie(x, y, v) = c;
+        std::cout << x << " " << y << " " << v << std::endl;
+    }
+  return 0;
 }
