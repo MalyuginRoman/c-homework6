@@ -114,3 +114,5 @@ private:
     const T defaultElement;
     std::map<std::pair<long, long>, T > matrix;
 };
+
+int version();
