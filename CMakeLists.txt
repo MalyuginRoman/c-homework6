@@ -19,7 +19,7 @@ add_library(Matrix lib.cpp)
 add_executable(test_version test_version.cpp)
 
 set_target_properties(Matrix_cli Matrix test_version PROPERTIES
-    CXX_STANDARD 14
+    CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
 )
 target_include_directories(Matrix
