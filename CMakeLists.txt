@@ -25,8 +25,6 @@ set_target_properties(Matrix_cli Matrix test_version PROPERTIES
 target_include_directories(Matrix
     PRIVATE "${CMAKE_BINARY_DIR}"
 )
-set_target_properties(test_version PROPERTIES
-)
 
 target_link_libraries(Matrix_cli PRIVATE
     Matrix
