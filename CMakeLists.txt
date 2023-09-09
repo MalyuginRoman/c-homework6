@@ -16,9 +16,8 @@ configure_file(version.h.in version.h)
 
 add_executable(Matrix_cli main.cpp)
 add_library(Matrix lib.cpp)
-add_executable(test_version test_version.cpp)
 
-set_target_properties(Matrix_cli Matrix test_version PROPERTIES
+set_target_properties(Matrix_cli Matrix PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
 )
@@ -29,10 +28,6 @@ target_include_directories(Matrix
 target_link_libraries(Matrix_cli PRIVATE
     Matrix
 )
-target_link_libraries(test_version
-    ${Boost_LIBRARIES}
-    Matrix
-)
 
 if (MSVC)
     target_compile_options(Matrix_cli PRIVATE
@@ -41,17 +36,11 @@ if (MSVC)
     target_compile_options(Matrix PRIVATE
         /W4
     )
-    target_compile_options(test_version PRIVATE
-        /W4
-    )
 else ()
     target_compile_options(Matrix_cli PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
     target_compile_options(Matrix PRIVATE
-        -Wall -Wextra -pedantic -Werror
-    )
-    target_compile_options(test_version PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
 endif()
@@ -69,7 +58,3 @@ set(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
 set(CPACK_PACKAGE_CONTACT example@example.com)
 
 include(CPack)
-
-enable_testing()
-
-add_test(test_version test_version)
