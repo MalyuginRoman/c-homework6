@@ -39,7 +39,7 @@ public:
     }
 private:
     T element;
-    Matrix<T, N>*  matrixPtr;
     std::pair<long, long> index;
+    Matrix<T, N>*  matrixPtr;
     long x;
 };
