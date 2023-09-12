@@ -38,8 +38,8 @@ public:
         return element;
     }
 private:
-    T element;
     std::pair<long, long> index;
+    T element;
     Matrix<T, N>*  matrixPtr;
     long x;
 };
